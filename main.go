@@ -1,18 +1,23 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 //TIP To run your code, right-click the code and select <b>Run</b>. Alternatively, click
 // the <icon src="AllIcons.Actions.Execute"/> icon in the gutter and select the <b>Run</b> menu item from here.
 
 func main() {
-	//TIP Press <shortcut actionId="ShowIntentionActions"/> when your caret is at the underlined or highlighted text
-	// to see how GoLand suggests fixing it.
-	s := "gopher"
-	fmt.Println("Hello and welcome, %s!", s)
-	fmt.Println(checkInclusion("ab", "eidboaoo"))
+	a := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	s1 := a[2:5]
+	s2 := s1[2:6:7]
+
+	s2 = append(s2, 100)
+	s2 = append(s2, 200)
+
+	s1[2] = 20
+
+	fmt.Println(s1)
+	fmt.Println(s2)
+	fmt.Println(a)
 }
 
 func checkInclusion(s1 string, s2 string) bool {

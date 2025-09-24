@@ -2,6 +2,7 @@ package code
 
 import (
 	"code.byted.org/h_cloud/easymock"
+	"code.byted.org/storage/leetcode/code/other"
 	"code.byted.org/storage/leetcode/code/strings"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/suite"
@@ -36,5 +37,12 @@ func (suite *CodeTestSuite) TestCheckInclusion() {
 	easymock.EasyMockConvey("TestCheckInclusion test", suite.T(), func() {
 		b := strings.CheckInclusion("ab", "eidbaooo")
 		suite.True(b)
+	})
+}
+
+func (suite *CodeTestSuite) TestMySqrt() {
+	easymock.EasyMockConvey("TestMySqrt test", suite.T(), func() {
+		b := other.MySqrt(0)
+		suite.Equal(b, 0)
 	})
 }
