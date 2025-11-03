@@ -1,5 +1,7 @@
 package list_tree
 
+// 直接层序遍历，在构造每一层[]int数组的数据，根据顺序头插或者尾插
+
 func zigzagLevelOrder(root *TreeNode) [][]int {
 	ans := make([][]int, 0)
 
@@ -95,5 +97,40 @@ func zigzagLevelOrder2(root *TreeNode) [][]int {
 		ans = append(ans, layer)
 		layerNum++
 	}
+	return ans
+}
+
+func zigzagLevelOrder3(root *TreeNode) [][]int {
+	ans := [][]int{}
+	if root == nil {
+		return ans
+	}
+	layer := []*TreeNode{root}
+
+	for i := 0; len(layer) != 0; i++ {
+		tmp := []*TreeNode{}
+		l := []int{}
+
+		isLeftToRight := false
+		if i%2 == 0 {
+			isLeftToRight = true
+		}
+		for _, item := range layer {
+			if isLeftToRight {
+				l = append(l, item.Val)
+			} else {
+				l = append([]int{item.Val}, l...)
+			}
+			if item.Left != nil {
+				tmp = append(tmp, item.Left)
+			}
+			if item.Right != nil {
+				tmp = append(tmp, item.Right)
+			}
+		}
+		layer = tmp
+		ans = append(ans, l)
+	}
+
 	return ans
 }

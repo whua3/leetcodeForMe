@@ -1,6 +1,8 @@
 package array
 
 // 官方题解方法一：二分查找
+
+// 旋转之后的数组在旋转点左右两边分别都是有序的
 func search(nums []int, target int) int {
 	n := len(nums)
 	if n == 0 {

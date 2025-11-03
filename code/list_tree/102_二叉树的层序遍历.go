@@ -29,3 +29,29 @@ func levelOrder(root *TreeNode) [][]int {
 	level(l)
 	return ans
 }
+
+func levelOrder2(root *TreeNode) [][]int {
+	ans := [][]int{}
+	if root == nil {
+		return ans
+	}
+	layer := []*TreeNode{root}
+
+	for len(layer) != 0 {
+		tmp := []*TreeNode{}
+		l := []int{}
+		for _, item := range layer {
+			l = append(l, item.Val)
+			if item.Left != nil {
+				tmp = append(tmp, item.Left)
+			}
+			if item.Right != nil {
+				tmp = append(tmp, item.Right)
+			}
+		}
+		layer = tmp
+		ans = append(ans, l)
+	}
+
+	return ans
+}

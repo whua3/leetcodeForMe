@@ -60,3 +60,8 @@ func copyMap(src map[byte]int) map[byte]int {
 	}
 	return dest
 }
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}

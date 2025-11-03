@@ -2,7 +2,6 @@ package code
 
 import (
 	"code.byted.org/h_cloud/easymock"
-	"code.byted.org/storage/leetcode/code/other"
 	"code.byted.org/storage/leetcode/code/strings"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/suite"
@@ -42,7 +41,7 @@ func (suite *CodeTestSuite) TestCheckInclusion() {
 
 func (suite *CodeTestSuite) TestMySqrt() {
 	easymock.EasyMockConvey("TestMySqrt test", suite.T(), func() {
-		b := other.MySqrt(0)
+		b := strings.LongestCommonPrefix2([]string{"ab", "a"})
 		suite.Equal(b, 0)
 	})
 }

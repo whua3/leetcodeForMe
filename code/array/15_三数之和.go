@@ -3,6 +3,8 @@ package array
 import "sort"
 
 // 官方题解一：双指针
+
+// 先数组排序，然后使用双指针指向头尾，注意跳过重复数
 func threeSum(nums []int) [][]int {
 	sort.Ints(nums) // 先排序
 	ans := make([][]int, 0)
@@ -14,6 +16,7 @@ func threeSum(nums []int) [][]int {
 		}
 
 		if i > 0 && nums[i] == nums[i-1] {
+			// 前一个数已经找过了，跳过，避免重复
 			continue
 		}
 

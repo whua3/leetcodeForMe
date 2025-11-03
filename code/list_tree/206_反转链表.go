@@ -1,7 +1,5 @@
 package list_tree
 
-import "strings"
-
 func reverseList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
@@ -17,7 +15,5 @@ func reverseList(head *ListNode) *ListNode {
 			r = r.Next
 		}
 	}
-
-	strings.TrimSpace()
 	return p
 }

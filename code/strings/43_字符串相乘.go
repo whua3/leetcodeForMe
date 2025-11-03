@@ -15,7 +15,7 @@ func multiply(num1 string, num2 string) string {
 			n2 := int(num2[j] - '0')
 			sum := res[i+j+1] + n1*n2
 			res[i+j+1] = sum % 10
-			res[i+j] += sum / 10
+			res[i+j] = res[i+j] + sum/10
 		}
 	}
 

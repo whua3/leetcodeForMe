@@ -2,10 +2,13 @@ package array
 
 import "sort"
 
+// 按区间的头进行排序，然后遍历合并
+
 func merge(intervals [][]int) [][]int {
 	if len(intervals) == 0 {
 		return [][]int{}
 	}
+	// 按左边界升序排序, 要记住这个sort函数怎么写的
 	sort.Slice(intervals, func(i, j int) bool {
 		return intervals[i][0] < intervals[j][0]
 	})

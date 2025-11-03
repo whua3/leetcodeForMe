@@ -69,5 +69,4 @@ func sort(head, tail *ListNode) *ListNode {
 	mid := slow
 
 	return mergeTwoList(sort(head, mid), sort(mid, tail))
-
 }

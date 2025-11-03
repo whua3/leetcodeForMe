@@ -32,7 +32,7 @@ func reverseList2(head *ListNode) *ListNode {
 	}
 
 	p, q, r := head, head.Next, head.Next.Next
-	head.Next = nil
+	head.Next = nil // 注意这里要断开
 	for q != nil {
 		q.Next = p
 		p = q
